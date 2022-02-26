@@ -31,6 +31,6 @@ function load10(root, start, nums, steps=10){
     console.log(data);
 
 }
-var root = "https://img.xchina.xyz/photos/61eda7fb1e63e/";
-load10(root, 1, 10, 1000);
+var root = "https://img.xchina.xyz/photos/61cf6dec77eb1/";
+load10(root, 1, 612, 1000);
 ```
