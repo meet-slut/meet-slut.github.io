@@ -70,6 +70,17 @@
     </div>
     <!-- .container -->
     <script type="text/javascript">
+
+    function getQueryVariable(variable){
+        let query = window.location.search.substring(1);
+        let vars = query.split("&");
+        for (let i=0;i<vars.length;i++) {
+            let pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+        }
+        return "default";
+    }
+
     function padding0(num, len){
         return (Array(len).join(0) + num).slice(-len);
     }
@@ -90,7 +101,8 @@
     var gallery = new NaturalGallery.Gallery(galleryEl, photoswipeEl, galleryData);
     var images = null;
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'data/61eda7fb1e63e.json');
+    gid = getQueryVariable("gid");
+    xhr.open('GET', `data/${gid}.json`);
     xhr.send(null);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
