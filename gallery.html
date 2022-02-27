@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - List/Grid View Switcher with Flexbox</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+    <style type="text/css">
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+    * {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+        background: lightgrey;
+    }
+
+    #layout {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background: white;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+
+    #layout button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 25px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+    }
+
+    #layout button.clicked {
+        background: #5C6168;
+        color: white;
+    }
+
+    #gallery {
+        display: flex;
+        flex-flow: wrap;
+        align-items: flex-end;
+        padding: 10px;
+        margin-top: 80px;
+    }
+
+    #gallery figure {
+        flex: 1 400px;
+        display: flex;
+        flex-flow: wrap;
+        border-radius: 3px;
+        overflow: hidden;
+        margin: 10px;
+    }
+
+    #gallery figure img {
+        -o-object-fit: cover;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    #gallery figure figcaption {
+        background: white;
+        padding: 20px;
+        width: 100%;
+    }
+
+    #gallery.grid img {
+        max-height: 300px;
+    }
+
+    #gallery.list {
+        justify-content: center;
+    }
+
+    #gallery.list figure {
+        flex: none;
+        width: 98%;
+    }
+
+    #gallery.list img {
+        height: 400px;
+    }
+    figcaption a {
+        display: block;
+        text-align: right;
+    }
+    a, a:hover, a:active,a:link,a:visited {
+        text-decoration: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="layout">
+        <button class="grid-view"><i class="ion-android-apps"></i></button>
+        <button class="list-view"><i class="ion-android-menu"></i></button>
+    </div>
+    <div id="gallery">
+        <figure>
+            <img src="https://img.xchina.xyz/photos/61cf6dec77eb1/0010_300x0.jpg" alt="" />
+            <figcaption>国模龙园园宾馆大尺度人体私拍套图<a href="album.html?gid=61cf6dec77eb1">>>>查看更多</a></figcaption>
+
+        </figure>
+        <figure>
+            <img src="https://img.xchina.xyz/photos/61eda7fb1e63e/0005_300x0.jpg" alt="" />
+            <figcaption>国模龙园园宾馆大尺度人体私拍套图<a href="album.html?gid=61eda7fb1e63e">>>>查看更多</a></figcaption>
+        </figure>
+        <figure>
+            <img src="https://img.xchina.xyz/photos/61f1a98bc6f54/0099_300x0.jpg" alt="" />
+            <figcaption>国模龙园园宾馆大尺度人体私拍套图<a href="album.html?gid=61f1a98bc6f54">>>>查看更多</a></figcaption>
+        
+        </figure>
+
+    </div>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script type="text/javascript">
+    $("button").click(function() {
+        $(".clicked").removeClass("clicked");
+        $(this).toggleClass("clicked");
+
+        if ($(this).hasClass("grid-view")) {
+            $("#gallery").addClass("grid");
+            $("#gallery").removeClass("list");
+        } else {
+            $("#gallery").removeClass("grid");
+            $("#gallery").addClass("list");
+        }
+    });
+
+    $(".grid-view").trigger("click");
+    </script>
+</body>
+
+</html>
