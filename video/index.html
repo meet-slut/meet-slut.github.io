@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AV player</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .carousel-caption {
+            padding-bottom: 0rem;
+            margin-bottom: 1.25rem;
+            background-color: #9e9e9e80;
+            border-radius: 5px;
+        }
+
+        option {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class=".container-fluid p-3">
+        <!-- Carousel -->
+        <div id="slide" class="carousel slide" data-bs-ride="carousel">
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#slide" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#slide" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#slide" data-bs-slide-to="2"></button>
+            </div>
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://img.cache010.com/media/videos/tmb/1801/1.jpg" class="d-block" style="width:100%">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://img.cache010.com/media/videos/tmb/4349/1.jpg" class="d-block" style="width:100%">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://img.cache010.com/media/videos/tmb/2531/1.jpg" class="d-block" style="width:100%">
+                </div>
+            </div>
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#slide" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#slide" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+        <h2>Japanese Adult Videos Player</h2>
+        <label for="avlist" class="form-label">Choose video to Play</label>
+        <select class="form-select form-select-lg" id="avlist" name="AV">
+        </select>
+        <iframe style="width:100%; " src="http://v.cache10.us/embed/a420f8e3f51ca1ad5c47" frameborder="0"
+            allowfullscreen></iframe>
+    </div>
+    <script type="text/javascript">
+        $.ajax({
+            type: "GET",
+            url: "data/playlist.json",
+            dataType: "json",
+            success: function (data) {
+                data.forEach((ele, idx) => { $("#avlist").append($(`<option>[${ele.number}] ${decodeURIComponent(ele.title)}</option>`)) });
+                
+                $("#avlist").change(() => {
+                    let index = $('#avlist').prop('selectedIndex');
+                    $("iframe").attr("src", data[index].src);
+                    console.log(index, data[index].src);
+                });
+                
+            }
+        });
+        $("iframe").attr("height", `${parseInt($("iframe")[0].clientWidth * 0.6)}px`);
+        window.onresize = () => { $("iframe").attr("height", `${parseInt($("iframe")[0].clientWidth * 0.6)}px`); };
+    </script>
+</body>
+
+</html>

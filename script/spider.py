@@ -11,6 +11,8 @@ from PIL import Image
 import time
 import random
 import json
+
+
 def tojson(gid, pages, title):
     headers = {
         "referer": f"https://xchina.xyz/photo/id-{gid}.html",
@@ -19,37 +21,34 @@ def tojson(gid, pages, title):
     data = {
         "title": title,
         "gid": gid,
-        "root": f"https://img.xchina.xyz/photos/{gid}/",
+        "root": "https://img.xchina.club/photos",
         "data": []
     }
+    failed = []
     for i in range(1, 1+pages):
-        d = {
-            "thumbnail": f"{i:04d}_300x0.jpg",
-            "enlarged": f"{i:04d}.jpg",
-            "eWidth": 0,
-            "eHeight": 0,
-            "tWidth": 0,
-            "tHeight": 0,
-        }
+        thumbnail = f"{i:04d}_300x0.jpg"
+        enlarged = f"{i:04d}.jpg"
+
         try:
-            response = requests.get(f"https://img.xchina.xyz/photos/{gid}/{d['thumbnail']}", headers=headers, timeout=15)
-            d["tWidth"], d["tHeight"] = Image.open(BytesIO(response.content)).size
+            response = requests.get(f"{data['root']}/{gid}/{thumbnail}", headers=headers, timeout=15)
+            tWidth, tHeight = Image.open(BytesIO(response.content)).size
+            response = requests.get(f"https://img.xchina.club/photos/{gid}/{enlarged}", headers=headers, timeout=15)
+            eWidth, eHeight = Image.open(BytesIO(response.content)).size
+            data["data"].append([thumbnail, tWidth, tHeight, enlarged, eWidth, eHeight])
 
-            response = requests.get(f"https://img.xchina.xyz/photos/{gid}/{d['enlarged']}", headers=headers, timeout=15)
-            d["eWidth"], d["eHeight"] = Image.open(BytesIO(response.content)).size
-
-            data["data"].append(d)
-            print(d["enlarged"], " done")
+            print(enlarged, " done")
         except:
-            print(d['enlarged'], "fail..................")
+            print(enlarged, "fail..................")
+            failed.append(i)
+        time.sleep(random.random()/3)
 
-        
-        
-        time.sleep(random.random())
-    with open(f"data/{gid}.json", 'w') as f:
+    print(failed)
+    with open(f"{gid}.json", 'w') as f:
         json.dump(data, f)
+    print({"title": title, "gid": gid, "pages": pages})
 
-tojson("61eb0967af7e1", 480, "国模苏菲亚宾馆人体私拍套图")
+tojson("624c53c714eb2", 913, "国模菲菲大尺度人体私拍套图")
+
 """
 61ff6f9b010ec    国模苏雅大尺度人体私拍套图
 614744206f460    国模紫嫣宾馆大尺度人体私拍套图

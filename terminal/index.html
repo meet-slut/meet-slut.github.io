@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Terminal View</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <body onload="parse('whoami'); setFocus()">
+        <div class="base" onclick="setFocus()"></div>
+        <div class="terminal">
+            <div id="terminal_screen">
+                <p class="greeting">
+                    # Welcome to Terminal View. Please type your command below:<br>
+                    #<br>
+                    # If you want to learn who am i, type "<span class="cmd">whoami</span>" or<br>
+                    # just type "<span class="cmd">help</span>" to see all documentation.<br>
+                    <br>
+                </p>
+            </div>
+            <div id="terminal_input">
+                <div class="cmd" style="display: inner-block"></div>
+                <textarea id="cmd_line" rows="1" placeholder="type your code here!">whoami</textarea>
+            </div>
+        </div>
+    </body>
+    <!-- partial -->
+    <script src="./script.js"></script>
+    <script type="text/javascript">
+
+        // http://m3u8.361lu.com/us.php?key=dzQ2c0ZnVVMwTlY4Wis0RWFVUUJtUUJxL3V4czZJaGZ6ODFHanpoT1AxQ2d6NitxZ0ZneVpXTTFWem9PVnRZZzNsQjhHMHlDOFlpdGs5K0hTT0xDaTRWTjQ2R2FJM0cyZ2sraTZBcVVxR0F5NzRtbFhXNFlwSEo0WmVkaVlTRnh2U3lyeGJwOC9CT2hGZWtWSHdBZElYcWl5SUpxNGFGMzdHSXEzUXlhclg0PQ==&hash=2acdcd7a6497cc2702c9f3cf87d4ac93562676841bc518ccd7f0a0061b4a58c4928b9115e2fdc32dfe3e3bdf80a2119a6d39c3125b16e0e7085a65c3777585bc&vid=2041
+    </script>
+</body>
+
+</html>
+
+
