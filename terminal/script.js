@@ -108,7 +108,7 @@ function ipconfig(){
 
 function exit() {
     window.close();
-    alert("Exit function does not work on Codepen!");
+    // alert("Exit!");
 }
 
 function clear() {
@@ -126,11 +126,11 @@ function help() {
     <p class="warning"><i class="fa fa-question-circle" aria-hidden="true"></i>
     These are common commands used in various situations:</p>
     <ul class="list">
-      <li>whoami <span class="comment"> ............................ [Shows who am i]</span></li>
-      <li>video list <span class="comment">or -l .................. [Lists all videos]</span></li>
-      <li>video play &lsaquo;video_name&rsaquo; <span class="comment">or -p ..... [Plays selected video]</span></li>
-      <li>clear <span class="comment"> ............................. [Clear screen]</span></li>
-      <li>exit <span class="comment"> .............................. [Close current browser window]</span></li>
+        <li>whoami <span class="comment"> ............................ [Shows who am i]</span></li>
+        <li>video list <span class="comment">or -l .................. [Lists all videos]</span></li>
+        <li>video play &lsaquo;video_name&rsaquo; <span class="comment">or -p ..... [Plays selected video]</span></li>
+        <li>clear <span class="comment"> ............................. [Clear screen]</span></li>
+        <li>exit <span class="comment"> .............................. [Close current browser window]</span></li>
     </ul>
     <br>`;
     document.getElementById("terminal_screen").appendChild(code);
@@ -173,7 +173,6 @@ function video_list() {
         <p class="warning"><i class="fa fa-music" aria-hidden="true"></i>
         Here is the list</p>
         <ul class="list">${content}</ul>
-        <br>
         <p class="info">Use 'video -p &lsaquo;number&rsaquo;' command for playing the video...</p>
         <br>`
         print(output);
@@ -187,7 +186,7 @@ function cmd_clear() {
 /////////////////////////////////////////////////////
 
 function autosize() {
-    var el = this;
+    let el = this;
     setTimeout(function() {
         el.style.cssText = 'height:auto; padding:0';
         el.style.cssText = 'height:' + el.scrollHeight + 'px';
