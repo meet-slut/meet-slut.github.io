@@ -2,65 +2,142 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
     <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet" />
     <style type="text/css">
-    ::-webkit-scrollbar {
-        display: none;
-    }
-    .card-img{
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        width: 100%; 
-        height: 100%;
-    }
-    .card div.row {
-        height: 250px;
-    }
-    .vjs-paused .vjs-big-play-button,
-    .vjs-paused.vjs-has-started .vjs-big-play-button {
-        display: block;
-    }
+        ::-webkit-scrollbar {
+            display: none;
+        }
 
-    .video-js .vjs-big-play-button{
-        font-size: 2.5em;
-        line-height: 2.3em;
-        height: 2.5em;
-        width: 2.5em;
-        -webkit-border-radius: 2.5em;
-        -moz-border-radius: 2.5em;
-        border-radius: 2.5em;
-        background-color: #73859f;
-        background-color: rgba(115,133,159,.5);
-        border-width: 0.15em;
-        margin-top: -1.25em;
-        margin-left: -1.75em;
-    }
-    /* 中间的播放箭头 */
-    .vjs-big-play-button .vjs-icon-placeholder {
-        font-size: 1.63em;
-    }
-    /* 加载圆圈 */
-    .vjs-loading-spinner {
-        font-size: 2.5em;
-        width: 2em;
-        height: 2em;
-        border-radius: 1em;
-        margin-top: -1em;
-        margin-left: -1.5em;
-    }
+        .card-img {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            width: 100%;
+            height: 100%;
+        }
 
+        .card div.row {
+            height: 250px;
+        }
+
+        .vjs-paused .vjs-big-play-button,
+        .vjs-paused.vjs-has-started .vjs-big-play-button {
+            display: block;
+        }
+
+        /* .video-js .vjs-big-play-button {
+            font-size: 2.5em;
+            line-height: 2.3em;
+            height: 2.5em;
+            width: 2.5em;
+            -webkit-border-radius: 2.5em;
+            -moz-border-radius: 2.5em;
+            border-radius: 2.5em;
+            background-color: #73859f;
+            background-color: rgba(115, 133, 159, .5);
+            border-width: 0.15em;
+            margin-top: -1.25em;
+            margin-left: -1.75em;
+        } */
+
+        /* 中间的播放箭头 */
+        .vjs-big-play-button .vjs-icon-placeholder {
+            font-size: 1.63em;
+        }
+
+        /* 加载圆圈 */
+        .vjs-loading-spinner {
+            font-size: 2.5em;
+            width: 2em;
+            height: 2em;
+            border-radius: 1em;
+            margin-top: -1em;
+            margin-left: -1.5em;
+        }
+
+
+        .vjs-theme-sea .vjs-big-play-button {
+            font-size: 2.5em;
+            line-height: 2.3em;
+            height: 2.5em;
+            width: 2.5em;
+            -webkit-border-radius: 2.5em;
+            -moz-border-radius: 2.5em;
+            border-radius: 2.5em;
+            background-color: #73859f;
+            background-color: rgba(115, 133, 159, .5);
+            border-width: 0.15em;
+            margin-top: -1.25em;
+            margin-left: -1.75em;
+        }
+
+        .vjs-theme-sea .vjs-control-bar {
+            height: 4em;
+            background-color: hsla(0, 0%, 100%, .4)
+        }
+
+        .vjs-theme-sea .vjs-button:hover {
+            color: #4176bc;
+            background: -webkit-gradient(linear, left bottom, left top, from(#d0ddee), to(#fff));
+            background: linear-gradient(0deg, #d0ddee, #fff)
+        }
+
+        .vjs-theme-sea .vjs-button>.vjs-icon-placeholder:before {
+            line-height: 2.2
+        }
+
+        .vjs-theme-sea .vjs-time-control {
+            line-height: 4em
+        }
+
+        .vjs-theme-sea .vjs-picture-in-picture-control,
+        .vjs-theme-sea .vjs-volume-panel {
+            display: none
+        }
+
+        .vjs-theme-sea .vjs-progress-control .vjs-play-progress {
+            background-color: rgba(65, 118, 188, .9)
+        }
+
+        .vjs-theme-sea .vjs-progress-control .vjs-play-progress:before {
+            display: none
+        }
+
+        .vjs-theme-sea .vjs-progress-control .vjs-slider {
+            background-color: rgba(65, 118, 188, .1)
+        }
+
+        .vjs-theme-sea .vjs-progress-control .vjs-load-progress div {
+            background: hsla(0, 0%, 100%, .5)
+        }
+
+        .vjs-theme-sea .vjs-progress-control .vjs-progress-holder {
+            margin: 0;
+            height: 100%
+        }
+
+        .vjs-theme-sea .vjs-progress-control .vjs-time-tooltip {
+            background-color: rgba(65, 118, 188, .5);
+            color: #fff
+        }
+
+        .vjs-theme-sea .vjs-progress-control .vjs-mouse-display .vjs-time-tooltip {
+            background-color: hsla(0, 0%, 100%, .7);
+            color: #4176bc
+        }
     </style>
 </head>
 
 <body>
+    <!-- vjs-default-skin  -->
     <div class="container-fluid m-0 p-2" style="width: 100%">
-        <video id="player" class="video-js vjs-default-skin vjs-big-play-centered"></video>
-        
+        <video id="player" class="video-js vjs-theme-sea vjs-big-play-centered"></video>
+
         <div id="avlist" class="row mt-3" style="height: 70%; overflow: auto;"></div>
         <a href="iframe.html" class="btn btn-primary btn-block">Go to Old version!</a>
 
@@ -82,15 +159,18 @@
             // height: document.documentElement.clientHeight,
             // width: document.documentElement.clientWidth,
         });
-        function sec2str(x){
-            let h = Math.floor(x/3600).toString();
+        Player.on("click", ()=>{
+            console.log("click");
+        })
+        function sec2str(x) {
+            let h = Math.floor(x / 3600).toString();
             x = x % 3600;
-            let m = Math.floor(x/60).toString();
+            let m = Math.floor(x / 60).toString();
             x = x % 60;
             let s = x.toString();
-            if (h.length == 1){ h = "0" + h; }
-            if (m.length == 1){ m = "0" + m; }
-            if (s.length == 1){ s = "0" + s; }
+            if (h.length == 1) { h = "0" + h; }
+            if (m.length == 1) { m = "0" + m; }
+            if (s.length == 1) { s = "0" + s; }
             return `${h}:${m}:${s}`;
         }
         $.ajax({
@@ -98,7 +178,7 @@
             url: "data/list.json",
             dataType: "json",
             success: function (data) {
-                data.forEach((ele, idx) => { 
+                data.forEach((ele, idx) => {
                     let card = $(`
                     <div class="card m-2">
                         <div class="row">
@@ -112,7 +192,7 @@
                             </div>
                         </div>
                     </div>`);
-                    card.find("div.row div.col-6:first").click(()=>{
+                    card.find("div.row div.col-6:first").click(() => {
                         Player.poster(ele.poster);
                         Player.src({
                             src: ele.m3u8,

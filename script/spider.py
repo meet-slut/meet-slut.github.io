@@ -47,7 +47,7 @@ def tojson(gid, pages, title):
         json.dump(data, f)
     print({"title": title, "gid": gid, "pages": pages})
 
-tojson("624c53c714eb2", 913, "国模菲菲大尺度人体私拍套图")
+tojson("623073ef02e1c", 327, "国模亚美人体私拍套图")
 
 """
 61ff6f9b010ec    国模苏雅大尺度人体私拍套图

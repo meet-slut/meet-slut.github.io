@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
     <title>Welcome to meetslut</title>
     <style media="screen">
     * {
@@ -34,33 +35,33 @@
     }
 
     #section0 {
-        background-image: url("asset/images/1.jpg");
+        background-image: url("asset/cover_h_1.jpg");
     }
 
     #section1 {
-        background-image: url("asset/images/3.jpg");
+        background-image: url("asset/cover_h_2.jpg");
     }
 
     #section2 {
-        background-image: url("asset/images/5.jpg");
+        background-image: url("asset/cover_h_3.jpg");
     }
 
     #section3 {
-        background-image: url("asset/images/7.jpg");
+        background-image: url("asset/cover_h_4.jpg");
     }
 
     @media only screen and (max-width: 600px) {
         #section0 {
-            background-image: url("asset/images/2.jpg");
+            background-image: url("asset/cover_v_1.jpg");
         }
         #section1 {
-            background-image: url("asset/images/4.jpg");
+            background-image: url("asset/cover_v_2.jpg");
         }
         #section2 {
-            background-image: url("asset/images/6.jpg");
+            background-image: url("asset/cover_v_3.jpg");
         }
         #section3 {
-            background-image: url("asset/images/8.jpg");
+            background-image: url("asset/cover_v_4.jpg");
         }
     }
 
@@ -93,8 +94,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
         font-size: 40px;
-        /* background-color: #00000080; */
-        /* border-radius: 10px; */
         padding: 20px;
     }
 
@@ -109,12 +108,8 @@
         color: #ffffff;
     }
 
-/*    .content a:hover {
-        background-color: orangered;
-    }*/
-
-    body header {
-        background-color: #80808080;
+    header {
+        font-weight: bold;
         font-family: "Roboto", sans-serif;
         position: fixed;
         display: block;
@@ -126,11 +121,11 @@
         z-index: 90;
     }
 
-    body header .header-inner {
+    header .header-inner {
         padding: 12px 1.5%;
     }
 
-    body header .header-inner .logo {
+    header .header-inner .logo {
         position: relative;
         display: inline;
         width: auto;
@@ -138,7 +133,7 @@
         float: left;
     }
 
-    body header .header-inner .logo a {
+    header .header-inner .logo a {
         position: relative;
         display: inline;
         width: auto;
@@ -151,11 +146,11 @@
         text-transform: uppercase;
     }
 
-    body header .header-inner .logo a span {
+    header .header-inner .logo a span {
         font-weight: 700;
     }
 
-    body header .header-inner nav {
+    header .header-inner nav {
         position: relative;
         display: inline;
         margin: 0;
@@ -163,13 +158,13 @@
         float: right;
     }
 
-    body header .header-inner nav li {
+    header .header-inner nav li {
         position: relative;
         display: inline;
         margin-left: 16px;
     }
 
-    body header .header-inner nav li a {
+    header .header-inner nav li a {
         font-family: "Roboto", sans-serif;
         position: relative;
         font-size: 15px;
@@ -198,7 +193,7 @@
         <div class="sections">
             <div class="section" id="section0">
                 <div class="content">
-                    <h2>Welcome</h2>
+                    <h1>Welcome</h1>
                 </div>
             </div>
             <div class="section" id="section1">

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabulator</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="asset/index.css">
+    <style>
+        a {
+            color: #337ab7;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid pt-4">
+        <h2>Magnet List</h2>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+            磁力链接网站
+        </button>
+
+        <!-- 模态框 -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+
+                    <!-- 模态框头部 -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">磁力链接网站</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- 模态框内容 -->
+                    <div class="modal-body">
+                        <div class="list-group">
+                            <a href="https://en.btdig.com" class="list-group-item list-group-item-action">btdig</a>
+                            <a href="https://bt4g.org/" class="list-group-item list-group-item-action">bt4g</a>
+                          </div>
+
+                    </div>
+
+                    <!-- 模态框底部 -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped torrent-list">
+                <thead>
+                    <tr>
+                        <th class="hdr-name" style="width:auto;">Name</th>
+                        <th class="hdr-category text-center" style="width:100px;">Category</th>
+                        <th class="hdr-link text-center" style="width:70px;">Link</th>
+                        <th class="hdr-size text-center" style="width:100px;">Size</th>
+                        <th class="hdr-date text-center" title="In local time" style="width:140px;">Date</th>
+                        <th class="hdr-seeders text-center" title="Seeders" style="width:50px;"><i
+                                class="fa fa-arrow-up" aria-hidden="true"></i></th>
+                        <th class="hdr-leechers text-center" title="Leechers" style="width:50px;"><i
+                                class="fa fa-arrow-down" aria-hidden="true"></i></th>
+                        <th class="hdr-downloads text-center" title="Completed downloads" style="width:50px;"><i
+                                class="fa fa-check" aria-hidden="true"></i></th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "data/list.json",
+            dataType: "json",
+            success: function (res) {
+                let tbody = $(".table-body");
+                let data = res["data"];
+                let root = res["root"]
+                data.forEach((ele, idx) => {
+                    let labels = "";
+                    ele.category.forEach((e, i) => {
+                        if (e == "1080P") {
+                            labels += `<span class="badge bg-dark">${e}</span> `;
+                        } else {
+                            labels += `<span class="badge bg-primary">${e}</span> `;
+                        }
+                    });
+
+                    let row = $(`
+                    <tr class="default">
+                        <td>
+                            <a href="${root}/view/${ele.tid}">${ele.title}</a>
+                        </td>
+                        <td class="text-end">${labels}</td>
+                        <td class="text-center">
+                            <a href="${root}/download/${ele.tid}.torrent"><i class="fa fa-fw fa-download"></i></a>
+                            <a href="magnet:?xt=urn:btih:${ele.hash}"><i class="fa fa-fw fa-magnet"></i></a>
+                        </td>
+                        <td class="text-center">${ele.size}</td>
+                        <td class="text-center text-muted">${ele.date}</td>
+                        <td class="text-center">${ele.seeder}</td>
+                        <td class="text-center">${ele.leecher}</td>
+                        <td class="text-center">${ele.completed}</td>
+                    </tr>`);
+                    tbody.append(row);
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
