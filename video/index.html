@@ -18,11 +18,11 @@
             background-size: cover;
             background-position: center center;
             width: 100%;
-            height: 100%;
+            height: 60%;
         }
 
         .card div.row {
-            height: 250px;
+            height: 100%;
         }
 
         .vjs-paused .vjs-big-play-button,
@@ -182,12 +182,12 @@
                     let card = $(`
                     <div class="card m-2">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-6 align-self-center">
                                 <img class="card-img" style="background-image: url(${ele.poster});">
                             </div>
                             <div class="col-6 card-body">
-                                <h2 class="card-title">${ele.title}</h2>
-                                <h3 class="card-text">${ele.number}</h3>
+                                <h3 class="card-title">${ele.title}</h3>
+                                <h5 class="card-text">${ele.number}</h5>
                                 <p class="card-text"><small class="text-muted">${sec2str(ele.duration)}</small></p>
                             </div>
                         </div>
@@ -206,6 +206,15 @@
                 $("#avlist div.row div.col-6:first").click();
             }
         });
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?a181cf56abe754dada08d279b2d2354f";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+        })();
     </script>
 </body>
 
