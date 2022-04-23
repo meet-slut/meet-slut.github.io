@@ -58,8 +58,14 @@
         var data=[];
         function append(ele){
             let imgs = "";
-            for (let i=1; i<=ele.images; i++){
-                imgs += `<a class="gallery-item" data-src="${root+ele.path+i.toString().padStart(2, 0)}.jpg"><img class="img-responsive" src="${root+ele.path+i.toString().padStart(2, 0)}-750x410.jpg"></a>`;
+            if (typeof(ele.images) == "number"){
+                for (let i=1; i<=ele.images; i++){
+                    imgs += `<a class="gallery-item" data-src="${root+ele.path+i.toString().padStart(2, 0)}.jpg"><img class="img-responsive" src="${root+ele.path+i.toString().padStart(2, 0)}-750x410.jpg"></a>`;
+                }
+            } else {
+                for (let i=0; i<ele.images.length; i++){
+                    imgs += `<a class="gallery-item" data-src="${ele.images[i].large}"><img class="img-responsive" src="${ele.images[i].thumb}"></a>`;
+                }
             }
             let card = $(`<div class="card mt-3">
                 <img class="card-img-top p-0" src="${root+ele.path}-feat-750x410.jpg" alt="Card image" style="width:100%">
@@ -76,20 +82,19 @@
                 maxRowHeight: "200%",
                 lastRow: "justify",
                 margins: 3
-            }).on("jg.complete", function () {
-                window.lightGallery(
-                    ele, {
-                    autoplayFirstVideo: false,
-                    pager: false,
-                    galleryId: "interracial",
-                    plugins: [lgZoom, lgThumbnail],
-                    mobileSettings: {
-                        controls: false,
-                        showCloseIcon: true,
-                        download: false,
-                        rotate: false
-                    }
-                });
+            });
+            window.lightGallery(
+                card.find('div.gallery-container')[0], {
+                autoplayFirstVideo: false,
+                pager: false,
+                // galleryId: "",
+                plugins: [lgZoom, lgThumbnail],
+                mobileSettings: {
+                    controls: false,
+                    showCloseIcon: true,
+                    download: false,
+                    rotate: false
+                }
             });
             cur += 1;
         }

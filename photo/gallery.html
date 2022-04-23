@@ -99,7 +99,7 @@
     gid = getQueryVariable("gid")||"61cf6dec77eb1";
     console.log(gid);
 
-    $.getJSON(`data/${gid}.json`, function(res){
+    $.getJSON(`data/model/${gid}.json`, function(res){
         $("#title").text(res["title"]);
         let root = res["root"];
         let images = [];

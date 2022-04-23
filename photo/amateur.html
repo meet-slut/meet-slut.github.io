@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bootstrap5 实例</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>\
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <style>
+    a {
+        color: #6ab0fb;
+        text-decoration: none;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-3">
+        <h2>Amateur</h2>
+        <p><strong>Notes: </strong>  Chinese homemade amateur photos </p>
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed btn" data-bs-toggle="collapse" href="#item1">茵茵</a>
+                    <span class="badge bg-primary">40</span>
+                </div>
+                <div id="item1" class="collapse show" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        <p class="text-muted">一个肤色偏黑的母狗，尺度大，三栋全开</p>
+                        <ol class="list-group list-group-numbered" id="list1"></ol>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed btn" data-bs-toggle="collapse" href="#item2"> 楚瞳瞳瞳 </a>
+                    <span class="badge bg-primary">16</span>
+                </div>
+                <div id="item2" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        <ol class="list-group list-group-numbered" id="list2"></ol>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed btn" data-bs-toggle="collapse" href="#item3"> 安逸_S </a>
+                    <span class="badge bg-primary">8</span>
+                </div>
+                <div id="item3" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        <ol class="list-group list-group-numbered" id="list3"></ol>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed btn" data-bs-toggle="collapse" href="#item4"> 爱趾交的小母狗 </a>
+                    <span class="badge bg-primary">18</span>
+                </div>
+                <div id="item4" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        <ol class="list-group list-group-numbered" id="list4"></ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var data = {
+            "list1": [
+                ["68971", '小茵茵来了，向各位哥哥请安 <span class="badge rounded-pill bg-success">77P</span> '],
+                ["69072", '给主人发的福利，把主人诱惑得不要不要的 <span class="badge rounded-pill bg-success">50P</span> '],
+                ["69077", '稀记得当年和主人的第一次爱爱经历 <span class="badge rounded-pill bg-success">39P</span>'],
+                ["69140", '不知道有没小哥哥会羡慕那根小黄瓜 <span class="badge rounded-pill bg-success">20P</span> '],
+                ["69158", '有各位哥哥想看的（灌肠，滴蜡，扩阴，扩肛，还有潮吹） <span class="badge rounded-pill bg-success">104P</span> '],
+                ["69314", '丝袜美腿美脚杂图 <span class="badge rounded-pill bg-success">72P</span> '],
+                ["69633", '第一次尝试外拍，好刺激哦 <span class="badge rounded-pill bg-success">72P</span> '],
+                ["69746", '我愿变成童话里.你爱的那个天使 <span class="badge rounded-pill bg-success">36P</span> '],
+                ["70154", '好有感觉得一次 <span class="badge rounded-pill bg-success">42P</span> '],
+                ["70318", '茵茵就是主人的奴仆，性奴求主人赏赐大鸡巴，精液来填满小母狗的骚逼 <span class="badge rounded-pill bg-success">51P</span> '],
+                ["74965", '和主人车震走一波 <span class="badge rounded-pill bg-success">33P</span> '],
+                ["75066", '做个合格的小母狗 <span class="badge rounded-pill bg-success">54P</span> '],
+                ["75113", '主人最近好像比较喜欢野外 <span class="badge rounded-pill bg-success">55P</span> '],
+                ["75262", '今晚继续和主人外拍 <span class="badge rounded-pill bg-success">59P</span> '],
+                ["75284", '经典3P <span class="badge rounded-pill bg-success">44P</span> '],
+                ["75356", '家就是个可爱的小女仆嘛.主人骚骚的性奴小母狗.舒适的精厕 <span class="badge rounded-pill bg-success">48P</span> '],
+                ["75363", '骚骚的小学妹.有哥哥愿意收留嘛 <span class="badge rounded-pill bg-success">31P</span> '],
+                ["75548", '3P调教继续中 <span class="badge rounded-pill bg-success">57P</span> '],
+                ["76616", '今晚和主人路过小公园突然性起，被主人拉到旁边小公厕按在墙上操得不要不要哒 <span class="badge rounded-pill bg-success">42P</span> '],
+                ["75949", '丝袜诱惑，黑丝白丝，哥哥们更喜欢哪个颜色呢 <span class="badge rounded-pill bg-success">38P</span> '],
+                ["75993", '生活需要激情 <span class="badge rounded-pill bg-success">23P</span> '],
+                ["76292", '粉色连体丝袜，少女心满满 <span class="badge rounded-pill bg-success">26P</span> '],
+                ["78167", '深夜公园外拍 <span class="badge rounded-pill bg-success">55P</span> '],
+                ["78299", '夜拍机车女孩，操出白浆，最后给主人舔干净吞精 <span class="badge rounded-pill bg-success">70P</span> '],
+                ["78590", '臣妾知错，请主人狠狠地惩罚 <span class="badge rounded-pill bg-success">62P</span> '],
+                ["85055", '自娱自乐 <span class="badge rounded-pill bg-success">42P</span> '],
+                ["85113", '做主人骚母狗的待遇 <span class="badge rounded-pill bg-success">43P</span> '],
+                ["85172", '调教继续中<span class="badge rounded-pill bg-success">38P</span> '],
+                ["85176", '有没想念我的小哥哥 <span class="badge rounded-pill bg-success">99P</span> '],
+                ["85178", '一口满满的豆浆 <span class="badge rounded-pill bg-success">45P</span> '],
+                ["85180", '和主人在一起，每天都性福感满满 <span class="badge rounded-pill bg-success">73P</span> '],
+                ["85215", '经典重温：小母狗最喜欢的一组外拍 <span class="badge rounded-pill bg-success">58P</span> '],
+                ["85519", '学生装小母狗 <span class="badge rounded-pill bg-success">75P</span> '],
+                ["85564", '拖着小母狗伺候客人双插 <span class="badge rounded-pill bg-success">36P</span> '],
+                ["85565", '好闺蜜的自拍，又被主人看上了 <span class="badge rounded-pill bg-success">18P</span> '],
+                ["85701", '带着小母狗去配种 <span class="badge rounded-pill bg-success">48P</span> '],
+                ["85726", '是不是条合格的好母狗得经常拉出来溜溜 <span class="badge rounded-pill bg-success">35P</span> '],
+                ["85594", '调教扩阴扩肛潮吹版 <span class="badge rounded-pill bg-success">103P</span> '],
+                ["86527", '茵茵酒店肚兜 <span class="badge rounded-pill bg-success">53P</span> '],
+                ["86802", '茵茵在接受主人JB前先拍些美照 <span class="badge rounded-pill bg-success">116P</span> ']
+            ],
+            "list2": [
+                ["88459", "30岁卫校母狗老师开发随意蹂躏第一期 <span class='badge rounded-pill bg-success'>41P</span>"], 
+                ["88485", "30岁卫校母狗老师开发随意蹂躏第二期（学生装自己灌肠肛交）<span class='badge rounded-pill bg-success'>22P</span>"], 
+                ["89539", "30岁卫校母狗老师开发随意蹂躏第三期（下体剃毛外露外加母狗自己手势验证）<span class='badge rounded-pill bg-success'>34P</span>"], 
+                ["90242", "30岁卫校母狗老师开发随意蹂躏第四期（新纹身，戴肛塞外露，爆菊）<span class='badge rounded-pill bg-success'>40P</span>"],
+                ["91186", "30岁卫校母狗老师开发随意蹂躏第五期（情趣酒店成功3P， 喝尿，自慰）<span class='badge rounded-pill bg-success'>42P</span>"], 
+                ["92436", "30岁卫校母狗老师开发随意蹂躏第六期(南京汤山温泉外露随手拍图) <span class='badge rounded-pill bg-success'>34P</span>"], 
+                ["95323", "30岁卫校母狗老师开发随意蹂躏第七期（尿道调教，泰国户外露出，新纹身）<span class='badge rounded-pill bg-success'>60P</span>"], 
+                ["95799", "30岁卫校母狗老师开发随意蹂躏第八期（露脸，口爆，杂图）<span class='badge rounded-pill bg-success'>40P</span>"], 
+                ["95960", "30岁卫校母狗老师自我凌辱，求作贱，贱母狗手打发图 <span class='badge rounded-pill bg-success'>31P</span>"], 
+                ["99614", "便器清洁犬的日常调教 <span class='badge rounded-pill bg-success'>41P</span>"], 
+                ["103635", "包包从精液母狗堕落到肉便器公厕的日常第一番（温泉外露加穿阴环实录）<span class='badge rounded-pill bg-success'>64P</span>"], 
+                ["104436", "包包从精液母狗堕落到肉便器公厕的日常第二番（街头露出，厕所露出，面具黑丝）<span class='badge rounded-pill bg-success'>41P</span>"], 
+                ["105874", "包包从精液母狗堕落到肉便器公厕的日常第三番（炮机抽查，拳交，母狗入笼，纹身验证）<span class='badge rounded-pill bg-success'>74P</span>"], 
+                ["110590", "包包从精液母狗堕落到肉便器公厕的日常第四番（金陵水游城露出，条形码母畜，母狗精液采集招募中）<span class='badge rounded-pill bg-success'>41P</span>"], 
+                ["110960", "包包从精液母狗堕落到肉便器公厕的日常第五番（木牌定制特写，奶牛装，圣水调教）<span class='badge rounded-pill bg-success'>41P</span>"], 
+                ["121680", "包包从精液母狗堕落到肉便器公厕的日常第六番（百人斩，轮奸，精厕）<span class='badge rounded-pill bg-success'>73P</span>"]
+            ],
+            "list3": [
+                ["80469", "调教照片 第一弹 <span class='badge rounded-pill bg-success'>12P</span>"], 
+                ["80383", "调教照片 第二弹 <span class='badge rounded-pill bg-success'>38P</span>"], 
+                ["80537", "调教照片 第三弹 <span class='badge rounded-pill bg-success'>24P</span>"], 
+                ["81055", "调教照片 第四弹 <span class='badge rounded-pill bg-success'>30P</span>"], 
+                ["83900", "调教照片 第五弹 <span class='badge rounded-pill bg-success'>75P</span>"], 
+                ["85260", "调教照片 番外篇 <span class='badge rounded-pill bg-success'>17P</span>"], 
+                ["88062", "调教之旅 第六弹 <span class='badge rounded-pill bg-success'>55P</span>"], 
+                ["97554", "调教之旅 第七弹 <span class='badge rounded-pill bg-success'>37P</span>"]
+            ], 
+            "list4": [
+                ["110328", "爱趾交的小母狗第一帖，淋浴、口交、操逼、喝尿并尝试户外露出 <span class='badge rounded-pill bg-success'>28P</span>"], 
+                ["110332", "爱趾交的小母狗第二帖，假期迫不及待挨操和扩阴 <span class='badge rounded-pill bg-success'>20P</span>"], 
+                ["110362", "爱趾交的小母狗第三帖，夹子夹奶和胶带束缚 <span class='badge rounded-pill bg-success'>43P</span>"], 
+                ["110365", "爱趾交的小母狗第四帖，破处前后那点事和特写对比 <span class='badge rounded-pill bg-success'>45P</span>"], 
+                ["110369", "爱趾交的小母狗第五贴，白嫩的身体和学生装制服诱惑 <span class='badge rounded-pill bg-success'>59P</span>"], 
+                ["110379", "爱趾交的小母狗第六帖，白嫩小母狗沐浴后试穿三点情趣内衣 <span class='badge rounded-pill bg-success'>39P</span>"], 
+                ["110382", "爱趾交的小母狗第七帖，死库水死库水死库水 <span class='badge rounded-pill bg-success'>44P</span>"], 
+                ["110414", "爱趾交的小母狗第八帖，小母狗初次尝试小制服配黑丝袜 <span class='badge rounded-pill bg-success'>24P</span>"], 
+                ["110420", "爱趾交的小母狗第九帖，情趣白丝丝带捆手，发骚诱惑主人 <span class='badge rounded-pill bg-success'>37P</span>"], 
+                ["110426", "爱趾交的小母狗第十帖，赤裸拥抱阳光，剃毛展示粉红小嫩逼 <span class='badge rounded-pill bg-success'>21P</span>"], 
+                ["110483", "爱趾交的小母狗第十一帖，经期偶尔闯红灯，再来个三通，爱上肛交的快感，期待被多人轮奸 <span class='badge rounded-pill bg-success'>47P</span>"], 
+                ["110812", "爱趾交的小母狗第十二帖，我言秋日胜春朝，寒风吹过粉嫩的身躯，嫩穴渴望滚烫的阳具 <span class='badge rounded-pill bg-success'>94P</span>"], 
+                ["110755", "爱趾交的小母狗第十三帖，小母狗初次群交，享受4P享受快感，以后请大家叫小母狗婊子吧 <span class='badge rounded-pill bg-success'>29P</span>"], 
+                ["111283", "爱趾交的小母狗第十四帖，暖阳下，我迎芬芳，是谁家的姑娘 <span class='badge rounded-pill bg-success'>40P</span>"], 
+                ["112445", "爱趾交的小母狗第十五帖，蓝天白云下，青山绿草中，人形犬的日常性交作业 <span class='badge rounded-pill bg-success'>29P</span>"], 
+                ["116168", "爱趾交的小母狗第十六帖，解开羽绒服，露出里边迫不及待迎接3p的真空肉体 <span class='badge rounded-pill bg-success'>53P</span>"], 
+                ["115819", "爱趾交的小母狗第十七帖，谁说趾交是错别字，就爱趾交，爱多p，爱服侍让我开心的男生 <span class='badge rounded-pill bg-success'>47P</span>"], 
+                ["121450", "爱趾交的小母狗第十八帖，宿舍里偷偷露出稚嫩的身体 <span class='badge rounded-pill bg-success'>15P</span>"]
+            ]
+        }
+        for (let i of ["list1", "list2", "list3", "list4"]){
+            for (let j=0; j<data[i].length; j++){
+                $(`#${i}`).append(`<li class="list-group-item d-flex justify-content-between"><div class="ms-2 me-auto"><a href="/photo/poster.html?aid=${data[i][j][0]}"><div class="fw-bold">${data[i][j][1]}</div></a></div></li>`);
+            }
+            
+        }
+    </script>
+</body>
+
+</html>
+
+

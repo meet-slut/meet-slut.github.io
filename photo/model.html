@@ -25,10 +25,12 @@
     </div>
     <script>
 
-        $.getJSON("data/list.json", function(res){
+        $.getJSON("data/model.json", function(res){
             let data = res["data"];
             let root = "https://img.xchina.club/photos";
+            console.log(data);
             data.forEach(function(ele, idx){
+                console.log(idx, ele);
                 $("#list").append(`<div class="card col-12 col-sm-6 col-md-3 p-2">
                 <div class="card-img-top" style="background-image: url(${root}/${ele.gid}/0001_300x0.jpg);"></div>
                 <div class="card-body">

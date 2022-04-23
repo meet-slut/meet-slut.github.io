@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Awesome Bootstrap 3 Sidebar Navigation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/css/lightgallery.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/css/lg-zoom.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/css/lg-thumbnail.css'>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    body {
+        color: #fff;
+    }
+
+    .post-content {
+        font-size: 0.9rem;
+        background: #252525;
+        border: 0;
+    }
+
+    .indented:before {
+        content: '';
+        padding-left: 0.25em;
+        margin-right: 0.325rem;
+        border-right: 0.2rem solid rgba(255, 255, 255, 0.125);
+    }
+
+    .post-content p,
+    .post-content ul {
+        padding: 0.3125rem 0.625rem;
+        margin: 0;
+    }
+
+    .heading1 {
+        font-weight: 700;
+        font-size: 1rem;
+    }
+
+    a {
+        color: #6ab0fb;
+        text-decoration: none;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+    }
+
+    b,
+    .strong {
+        font-weight: 700;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid m-0 p-0" id="main">
+    </div>
+    <script src='https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/lightgallery.umd.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/plugins/zoom/lg-zoom.umd.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/plugins/thumbnail/lg-thumbnail.umd.js'></script>
+    <script type="text/javascript">
+
+    function imgs2html(imgs) {
+        let html = `<div class="gallery-container">`;
+        for (let i = 0; i < imgs.length; i++) {
+            let thumb = imgs[i],
+                large = imgs[i];
+            html += `<a class="gallery-item" data-src="${thumb}"><img class="img-responsive p-1" src="${large}" width="100%"></a>`;
+        }
+        html += `</div>`;
+        return html;
+    }
+    function getQueryVariable(variable){
+        let query = window.location.search.substring(1);
+        let vars = query.split("&");
+        for (let i=0; i<vars.length; i++) {
+            let pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+        }
+        return null;
+    }
+    var aid = getQueryVariable("aid")||"86802";
+    $.getJSON(`data/zipai/${aid}.json`, function(res){
+        let data = res["data"];
+        let content = `<div class="post-content"> <p class="heading1">${data[0]}</p>`;
+        for (let i = 1; i < data.length; i++) {
+            let item = data[i];
+            if (typeof(item) == "string") {
+                content += `<p>${item}</p>`;
+            } else if (typeof(item) == "object") {
+                content += imgs2html(item);
+            }
+        }
+        content += `</div>`;
+        $("#main").append($(content));
+
+        $(".gallery-container").each(function(idx, ele) {
+            window.lightGallery(
+                ele, {
+                    autoplayFirstVideo: false,
+                    pager: false,
+                    galleryId: idx,
+                    plugins: [lgZoom, lgThumbnail],
+                    mobileSettings: {
+                        controls: false,
+                        showCloseIcon: true,
+                        download: false,
+                        rotate: false
+                    }
+                }
+            );
+
+        })
+    })
+
+    </script>
+</body>
+
+</html>
