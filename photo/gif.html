@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Awesome Bootstrap 3 Sidebar Navigation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/css/lightgallery.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/css/lg-zoom.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/css/lg-thumbnail.css'>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container-fluid m-1 p-1" id="main">
+    </div>
+    <script src='https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/lightgallery.umd.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/plugins/zoom/lg-zoom.umd.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/plugins/thumbnail/lg-thumbnail.umd.js'></script>
+    <script type="text/javascript">
+
+    function imgs2html(imgs) {
+        let html = `<div class="gallery-container">`;
+        for (let i = 0; i < imgs.length; i++) {
+            let thumb = imgs[i],
+                large = imgs[i];
+            html += `<a class="gallery-item" data-src="${thumb}"><img class="img-responsive p-1" src="${large}" width="100%"></a>`;
+        }
+        html += `</div>`;
+        return html;
+    }
+
+    $.getJSON(`data/gif.json`, function(res){
+        let data = res["data"];
+        $("#main").append($(imgs2html(data)));
+        $(".gallery-container").justifiedGallery({
+            captions: false,
+            rowHeight: 120,
+            maxRowHeight: "150%",
+            lastRow: "justify",
+            margins: 3
+        }).on("jg.complete", function(){
+            window.lightGallery(
+                $(".gallery-container")[0], {
+                autoplayFirstVideo: false,
+                pager: false,
+                // galleryId: "",
+                plugins: [lgZoom, lgThumbnail],
+                mobileSettings: {
+                    controls: false,
+                    showCloseIcon: true,
+                    download: false,
+                    rotate: false
+                }
+            });
+        })
+    })
+
+    </script>
+</body>
+
+</html>
