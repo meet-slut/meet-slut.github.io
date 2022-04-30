@@ -48,7 +48,8 @@ def article(url, confirm=False):
             return 
     with open(f"photo/data/zipai/{aid}.json", "w") as f:
         json.dump({"data": content}, f)
-    print([str(aid), title])
+    
+    return [str(aid), title]
     
 def worklist(uid):
     # url = f"{ROOT}/my/{uid}/"
@@ -60,7 +61,7 @@ def worklist(uid):
     total = soup.find("a", attrs={"class": "sh_1"}).span.text.strip()
 
     user = soup.find(name="h2", attrs={"itemprop": "name"}).text.strip()
-    print(total, user)
+    # print(total, user)
     ul = soup.find(name="ul", attrs={"class": "ul_author_list cl"})
     for idx, li in enumerate(ul.findAll("li")):
         a = li.a
@@ -72,6 +73,7 @@ def main(author):
         if input(f"Download {title}({ROOT+href})[y/n]?: ")[0].lower() == "y":
             article(href)
             data.append([href.split("/")[-1].split(".")[0], title])
+        
     print(data[::-1])
         
 
@@ -104,8 +106,15 @@ while True:
     elif inp.split()[0].strip().lower() in ["article", "author"]:
         cmd, *args = inp.split()
         if cmd.strip() == "article":
-            article(args[0], True)
-        # print(cmd, args)
+            res = article(args[0], True)
+            print(res)
+        elif cmd.strip() == "author":
+            res = []
+            for title, href in worklist(args[0]):
+                if input(f"Download {title}({ROOT+href})[y/n]?: ")[0].lower() == "y":
+                    r = article(href, True)
+                    res.append(r)
+            print(res)
     else:
         print(f"Command {inp} is not defined!")
 
@@ -120,7 +129,26 @@ https://99zipai.com/my/4045/
 # https://99zipai.com/selfies/202202/130208.html
 https://99zipai.com/my/9926/
 https://99zipai.com/my/13411/
-
-
-
+https://99zipai.com/my/5159/ 哈尔滨s男
+https://99zipai.com/my/2724/ 分享团出品
+https://99zipai.com/my/3239/
+https://99zipai.com/my/9928/ 暖暖母狗
+https://99zipai.com/my/8546/ 凌辱人妻母狗
+https://99zipai.com/my/10716/ 母狗欢欣
+https://99zipai.com/my/4746/ 母狗自拍
+https://99zipai.com/my/8437/
+https://99zipai.com/my/9376/ 人妻自拍
+https://99zipai.com/my/8141/ 小湿机
+https://99zipai.com/my/7351/ 1861照相馆
+https://99zipai.com/my/2955/ 520兔妈妈
+https://99zipai.com/my/4324/ 上官夫人
+https://99zipai.com/my/4456/ 绿帽控呆呆
+https://99zipai.com/my/5743/ 达盖尔分享团
+https://99zipai.com/my/7724/ DDUB
+https://99zipai.com/my/11378/ 大仙s
+https://99zipai.com/my/5120/
+https://99zipai.com/my/2334/ 小妲己
+https://99zipai.com/my/6612/
+https://99zipai.com/my/8166/
+https://99zipai.com/my/6492/
 """
