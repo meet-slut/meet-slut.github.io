@@ -122,11 +122,21 @@ while True:
 """
 https://99zipai.com/selfies/202111/127295.html
 https://99zipai.com/selfies/202204/133807.html
+https://99zipai.com/selfies/202202/130208.html
+https://99zipai.com/selfies/201901/79058.html
+https://99zipai.com/selfies/201912/92740.html
+https://99zipai.com/selfies/201908/87664.html
+https://99zipai.com/selfies/201903/81935.html
+https://99zipai.com/selfies/201609/24269.html
+https://99zipai.com/selfies/201908/87716.html
+https://99zipai.com/selfies/201912/75999.html
+https://99zipai.com/selfies/202103/118930.html
+
+
 https://99zipai.com/my/13871/
 https://99zipai.com/my/13300/
 https://99zipai.com/my/14097/
 https://99zipai.com/my/4045/
-# https://99zipai.com/selfies/202202/130208.html
 https://99zipai.com/my/9926/
 https://99zipai.com/my/13411/
 https://99zipai.com/my/5159/ 哈尔滨s男
@@ -151,4 +161,11 @@ https://99zipai.com/my/2334/ 小妲己
 https://99zipai.com/my/6612/
 https://99zipai.com/my/8166/
 https://99zipai.com/my/6492/
+https://99zipai.com/my/9657/ 风吹小麦花
+https://99zipai.com/my/12583/ 直达花心
+https://99zipai.com/my/10127/ 权杖
+https://99zipai.com/my/5702/  0531
+https://99zipai.com/my/9156/ F大大
+
 """
+
