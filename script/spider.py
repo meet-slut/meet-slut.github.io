@@ -21,7 +21,7 @@ def tojson(gid, pages, title):
     data = {
         "title": title,
         "gid": gid,
-        "root": "https://img.xchina.club/photos",
+        "root": "https://img.xchina.fun/photos",
         "data": []
     }
     failed = []
@@ -32,7 +32,7 @@ def tojson(gid, pages, title):
         try:
             response = requests.get(f"{data['root']}/{gid}/{thumbnail}", headers=headers, timeout=15)
             tWidth, tHeight = Image.open(BytesIO(response.content)).size
-            response = requests.get(f"https://img.xchina.club/photos/{gid}/{enlarged}", headers=headers, timeout=15)
+            response = requests.get(f"https://img.xchina.fun/photos/{gid}/{enlarged}", headers=headers, timeout=15)
             eWidth, eHeight = Image.open(BytesIO(response.content)).size
             data["data"].append([thumbnail, tWidth, tHeight, enlarged, eWidth, eHeight])
 

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Asian model</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="never">
     <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <style>
@@ -28,12 +29,12 @@
 
         $.getJSON("data/model.json", function(res){
             let data = res["data"];
-            let root = "https://img.xchina.club/photos";
+            let root = "https://img.xchina.fun/photos";
             console.log(data);
             data.forEach(function(ele, idx){
                 console.log(idx, ele);
                 $("#list").append(`<div class="card col-12 col-sm-6 col-md-3 p-2">
-                <div class="card-img-top" style="background-image: url(${root}/${ele.gid}/0001_300x0.jpg);"></div>
+                <div class="card-img-top" style="background-image: url(${ele.cover});"></div>
                 <div class="card-body">
                     <h4 class="card-title">${ele.title}</h4>
                     <p class="card-text text-end text-muted">gid: ${ele.gid}</p>

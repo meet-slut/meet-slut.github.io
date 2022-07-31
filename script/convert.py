@@ -13,7 +13,7 @@ pages = len(images)
 data = {
     "title": title,
     "gid": gid,
-    "root": "https://img.xchina.club/photos",
+    "root": "https://img.xchina.fun/photos",
     "data": []
 }
 print(images)

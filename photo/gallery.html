@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="never">
     <title>Photo Gallery</title>
 
     <link rel="stylesheet" href="asset/natural.css">
@@ -103,14 +104,28 @@
         $("#title").text(res["title"]);
         let root = res["root"];
         let images = [];
-        res["data"].forEach(function(ele, idx){
-            let d = {
-                "title": `${idx+1}`,
-                "thumbnail": `${root}/${gid}/${ele[0]}`, "enlarged": `${root}/${gid}/${ele[3]}`,
-                "tWidth": ele[1], "tHeight": ele[2], "eWidth": ele[4], "eHeight": ele[5]
-            };
-            images.push(d);
-        })
+        if (root == "https://img.xchina.fun/photos"){
+            res["data"].forEach(function(ele, idx){
+                let d = {
+                    "title": `${idx+1}`,
+                    "thumbnail": `${root}/${gid}/${ele[0]}`, "enlarged": `${root}/${gid}/${ele[3]}`,
+                    "tWidth": ele[1], "tHeight": ele[2], "eWidth": ele[4], "eHeight": ele[5]
+                };
+                images.push(d);
+            })
+        } else {
+            res["data"].forEach(function(ele, idx){
+                let d = {
+                    "title": `${idx+1}`,
+                    "thumbnail": `${root}/${ele[0]}`, "enlarged": `${root}/${ele[3]}`,
+                    "tWidth": ele[1], "tHeight": ele[2], "eWidth": ele[4], "eHeight": ele[5]
+                };
+                images.push(d);
+            })
+        }
+        // let root = "https://img.xchina.fun/photos";
+        
+
         gallery.collection = images;
     })
 
