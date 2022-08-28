@@ -1,4 +1,8 @@
 # meet-slut.github.io
+static page holding: github.com
+dns: cloudflare
+oss: backbucket
+workflow: pip
 
 ```
 function preload(root, start, nums, steps=10){
