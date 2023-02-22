@@ -19,7 +19,7 @@
     h1 {
         font-family: 'PT Sans', sans-serif;
         text-align: center;
-        font-size: 48px;
+        /* font-size: 48px; */
     }
 
     .natural-gallery {
@@ -118,7 +118,7 @@
             res["data"].forEach(function(ele, idx){
                 let d = {
                     "title": `${idx+1}`,
-                    "thumbnail": `${root}/${ele[0]}`, "enlarged": `${root}/${ele[3]}`,
+                    "thumbnail": `${ele[0]}`, "enlarged": `${ele[3]}`,
                     "tWidth": ele[1], "tHeight": ele[2], "eWidth": ele[4], "eHeight": ele[5]
                 };
                 images.push(d);

@@ -32,12 +32,12 @@
             console.log(data);
             data.forEach(function(ele, idx){
                 console.log(idx, ele);
-                $("#list").append(`<div class="card col-6 col-sm-6 col-md-3 p-2 mb-2">
+                $("#list").append(`<div class="card col-6 col-sm-4 col-md-3 p-2 mb-2">
                 <div class="card-img-top" style="background-image: url(${ele.cover});"></div>
                 <div class="card-body">
                     <h4 class="card-title">${ele.title}</h4>
                     <p class="card-text text-end text-muted">gid: ${ele.gid}</p>
-                    <a href="gallery.html?gid=${ele.cid}&type=comic" class="btn btn-primary">查看更多</a>
+                    <a href="gallery.html?gid=${ele.gid}&type=comic" class="btn btn-primary">查看更多</a>
                 </div>
             </div>`)
             })
