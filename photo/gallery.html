@@ -98,9 +98,10 @@
     var photoswipeEl = document.getElementsByClassName('pswp')[0];
     var gallery = new NaturalGallery.Gallery(galleryEl, photoswipeEl, galleryData);
     gid = getQueryVariable("gid")||"61cf6dec77eb1";
+    type = getQueryVariable("type")||"model";
     console.log(gid);
 
-    $.getJSON(`data/model/${gid}.json`, function(res){
+    $.getJSON(`data/${type}/${gid}.json`, function(res){
         $("#title").text(res["title"]);
         let root = res["root"];
         let images = [];
