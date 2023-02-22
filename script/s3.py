@@ -190,6 +190,8 @@ if __name__ == '__main__':
     ApplicationKeyID = "xxxxxxxxxxx"
     ApplicationKey = "xxxxxxxxxxxxxxx"
 
+    ApplicationKeyID = "004e1c16c97c6260000000003"
+    ApplicationKey = "K004QHbaKv5qQ3UewkSm69qgFde6cBQ"
 
     app = BackBlaze(ApplicationKeyID, ApplicationKey, EndpointURL)
     # res = app.list_buckets('%Y-%m-%d %H:%M:%S')
